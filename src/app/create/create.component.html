@@ -1,0 +1,39 @@
+<div class="content">
+  <h2>Create your own Poll</h2>
+  <br>
+  <form>
+    <h3>Add Heading</h3> 
+    <mat-form-field class="headline">
+      <textarea matInput required [(ngModel)]="heading" name="heading" #headings="ngModel" placeholder="Heading" maxlength="150"></textarea>      
+      <mat-hint align="end">{{headings?.value?.length}} / 150</mat-hint>
+      <mat-error *ngIf="headings.invalid">Heading cannot be empty</mat-error>
+    </mat-form-field>
+    <br>
+
+    <h3>Add Options</h3>
+    <mat-form-field class="options">
+      <input matInput  autocomplete="off" [(ngModel)]="opt" name="options" #options="ngModel" placeholder="option {{nof}}">    
+      
+    </mat-form-field>
+    <button mat-button (click)="add()" [disabled]='btndis'><i class="material-icons">add</i></button>
+    <br>
+
+      
+    <mat-error *ngIf="error">There should be 4 options</mat-error>
+    
+    <h3>Select Type</h3>
+    <mat-radio-group [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
+      <mat-radio-button value="public" checked="checked">Public</mat-radio-button>
+      <br><br>
+      <mat-radio-button value="private">Private</mat-radio-button>
+    </mat-radio-group>
+
+    <h3>Add Duration</h3>
+    <mat-slider [(ngModel)]="duration" [ngModelOptions]="{standalone: true}" thumbLabel [displayWith]= "hours" min="1" max="24"></mat-slider>
+
+    <br><br>
+    <button mat-raised-button (click) = "openSnackBar('Poll Created' , 'nice!')">Create</button>
+  </form>
+
+
+</div>

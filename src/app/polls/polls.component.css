@@ -1,0 +1,44 @@
+.body {
+    display: grid;
+    grid-template-columns: auto ;
+    grid-gap: 20px;
+}
+
+
+
+ul {
+    list-style-type: none;
+}
+
+.poll-body {
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 10px;
+}
+
+.front {
+    display: grid;
+    grid-template-columns: auto 130px 50px;
+}
+
+.details {
+    padding-top: 10px;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 40px 250px auto 140px;
+    padding: 5px;
+}
+
+.option i {
+    cursor: pointer;
+    color: red;
+    font-size: 1.5em;
+}
+
+.details p {
+    text-align: center;
+    cursor: pointer;
+}
+

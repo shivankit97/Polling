@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+    margin: 0;
+    background-color: rgb(194, 194, 194) ;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 70px auto;
+    height: 100%;
+}

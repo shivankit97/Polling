@@ -1,0 +1,43 @@
+<div class="body">
+
+    <div class="poll-body" *ngFor="let poll of Polls | async">
+        
+        <div class="front">
+            
+            <strong>{{ poll.heading }}</strong>
+            <button  mat-button (click)="polled(poll)">poll</button>
+            <span>{{poll.duration}}</span>
+        </div>
+
+        <div *ngIf="readytopoll && pollselector.id == poll.id" class="details">
+                
+                <div class="option">
+                    <i class="fas fa-circle"></i>
+                    <span>{{poll.option1}}</span>
+                    <mat-progress-bar mode="determinate" [value]="val1"></mat-progress-bar>
+                    <span>{{val1}}%</span>
+                </div>
+                <div class="option">
+                    <i class="fas fa-circle"></i>
+                    <span>{{poll.option2}}</span>
+                    <mat-progress-bar mode="determinate" [value]="val2"></mat-progress-bar>
+                    <span>{{val2}}%</span>
+                </div>
+                <div class="option">
+                    <i class="fas fa-circle"></i>
+                    <span>{{poll.option3}}</span>
+                    <mat-progress-bar mode="determinate" [value]="val3"></mat-progress-bar>
+                    <span>{{val3}}%</span>
+                </div>
+                <div class="option">
+                    <i class="fas fa-circle"></i>
+                    <span>{{poll.option4}}</span>
+                    <mat-progress-bar mode="determinate" [value]="val4"></mat-progress-bar>
+                    <span>{{val4}}%</span>
+                </div>
+               
+                <p><i class="fas fa-angle-up" (click)="close()"></i></p>
+        </div>
+        
+    </div>
+</div>
